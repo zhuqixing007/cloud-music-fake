@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1275",
+      "name": "随机用户",
+      "font_class": "suijiyonghu",
+      "unicode": "f015a",
+      "unicode_decimal": 983386
+    },
+    {
       "icon_id": "77151",
       "name": "朋友圈",
       "font_class": "pengyouquan",
@@ -13,18 +20,25 @@
       "unicode_decimal": 983299
     },
     {
-      "icon_id": "4333790",
-      "name": "喜欢",
-      "font_class": "xihuan",
-      "unicode": "e610",
-      "unicode_decimal": 58896
-    },
-    {
       "icon_id": "4956289",
       "name": "暂停",
       "font_class": "zanting",
       "unicode": "e619",
       "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "6149766",
+      "name": "like",
+      "font_class": "like",
+      "unicode": "e68d",
+      "unicode_decimal": 59021
+    },
+    {
+      "icon_id": "6149770",
+      "name": "like_fill",
+      "font_class": "like_fill",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
     },
     {
       "icon_id": "7060117",

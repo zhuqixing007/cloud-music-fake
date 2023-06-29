@@ -1,5 +1,5 @@
 <template>
-  <div class="app-wrapper">
+  <div class="app-wrapper" @mouseup="removeMouseListener">
     <div class="views">
       <div class="side-menus">
         <div class="avator">
@@ -27,9 +27,12 @@
         <span v-else class="iconfont icon-zanting" @click="playOrPause"></span>
         <span class="iconfont icon-xiayishou"></span>
       </div>
-      <div class="process">进度条&歌名&时长</div>
+      <div class="process">
+        <process-bar></process-bar>
+      </div>
       <div class="operations">
-        <span class="iconfont icon-xihuan"></span>
+        <span v-if="!isLike" class="iconfont icon-like" @click="postLikeOrNot"></span>
+        <span v-else class="iconfont icon-like_fill" @click="postLikeOrNot"></span>
       </div>
       <div class="none-block"></div>
     </div>
@@ -38,12 +41,18 @@
 
 <script>
 import { mapState } from 'vuex'
+import processBar from '@/components/processBar'
+
 export default {
   //eslint-disable-next-line
   name: 'index',
+  components: {
+    'process-bar': processBar
+  },
   data() {
     return {
-      isPlay: false
+      isPlay: false,
+      isLike: false
     }
   },
   computed: {
@@ -58,6 +67,12 @@ export default {
     },
     playOrPause() {
       this.isPlay = !this.isPlay
+    },
+    postLikeOrNot() {
+      this.isLike = !this.isLike
+    },
+    removeMouseListener() {
+      document.onmousemove = null
     }
   }
 }
@@ -180,5 +195,8 @@ export default {
   span:last-child {
     color: #f83030;
   }
+}
+.icon-like_fill {
+  color: #f83030;
 }
 </style>
